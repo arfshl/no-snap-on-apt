@@ -33,6 +33,6 @@ Pin-Priority: 1000
 
 Package: chromium-browser
 Pin: release o=Ubuntu
-Pin-Priority: -1' >> /etc/apt/preferences.d/nosnaponapt
+Pin-Priority: -1' >> /etc/apt/preferences.d/nativeapt
 sudo apt update
 echo 'Done'

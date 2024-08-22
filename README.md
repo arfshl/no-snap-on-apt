@@ -8,4 +8,4 @@ For amd64/x64, we get it from [linux mint repository](http://packages.linuxmint.
 https://www.debian.org/distrib/packages)
 
 ### Script (for setup and removal)
-[24.04 LTS Noble](https://github.com/arfshl/no-snap-on-apt/tree/main/Noble/amd64)
+[24.04 LTS Noble](https://github.com/arfshl/no-snap-on-apt/tree/main/Noble)

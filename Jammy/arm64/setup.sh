@@ -32,15 +32,7 @@ Package: chromium-sandbox
 Pin: origin deb.debian.org
 Pin-Priority: 1000
 
-Package: thunderbird
-Pin: origin deb.debian.org
-Pin-Priority: 1000
-
 Package: firefox
-Pin: release o=Ubuntu
-Pin-Priority: -1
-
-Package: thunderbird
 Pin: release o=Ubuntu
 Pin-Priority: -1
 

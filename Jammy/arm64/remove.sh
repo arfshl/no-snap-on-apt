@@ -1,8 +1,8 @@
 #!/bin/sh
 sudo su
 echo 'Removing Additional Repository...'
-sudo apt remove linuxmint-keyring
-sudo rm /etc/apt/preferences.d/linuxmint.list
+sudo apt remove debian-keyring -y
+sudo rm /etc/apt/preferences.d/debian.list
 sudo rm etc/apt/preferences.d/mozilla.list
 sudo rm /etc/apt/keyrings/packages.mozilla.org.asc
 echo 'Removing APT Pinning...'

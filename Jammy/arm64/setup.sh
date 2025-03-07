@@ -1,5 +1,4 @@
 #!/bin/sh
-sudo su
 echo 'Adding Debian Repository...'
 sudo apt install debian-keyring
 sudo echo 'deb https://deb.debian.org/debian/ bullseye contrib main non-free
@@ -19,6 +18,10 @@ Pin-Priority: 1
 Package: *
 Pin: origin security.debian.org
 Pin-Priority: 1
+
+Package: firefox-esr
+Pin: origin deb.debian.org
+Pin-Priority: 1000
 
 Package: chromium
 Pin: origin deb.debian.org

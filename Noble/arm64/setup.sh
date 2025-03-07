@@ -19,20 +19,24 @@ Package: *
 Pin: origin security.debian.org
 Pin-Priority: 1
 
+Package: firefox-esr
+Pin: origin security.debian.org
+Pin-Priority: 1000
+
 Package: chromium
-Pin: origin deb.debian.org
+Pin: origin security.debian.org
 Pin-Priority: 1000
 
 Package: chromium-common
-Pin: origin deb.debian.org
+Pin: origin security.debian.org
 Pin-Priority: 1000
 
 Package: chromium-sandbox
-Pin: origin deb.debian.org
+Pin: origin security.debian.org
 Pin-Priority: 1000
 
 Package: thunderbird
-Pin: origin deb.debian.org
+Pin: origin security.debian.org
 Pin-Priority: 1000
 
 Package: firefox

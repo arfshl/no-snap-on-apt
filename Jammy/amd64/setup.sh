@@ -1,5 +1,4 @@
 #!/bin/sh
-sudo su
 echo 'Adding Linux Mint Repository...'
 sudo wget http://packages.linuxmint.com/pool/main/l/linuxmint-keyring/linuxmint-keyring_2022.06.21_all.deb && sudo dpkg -i linuxmint-keyring_2022.06.21_all.deb && sudo rm linuxmint-keyring_2022.06.21_all.deb
 sudo echo 'deb http://packages.linuxmint.com virginia upstream' >> /etc/apt/sources.list.d/linuxmint.list

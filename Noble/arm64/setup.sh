@@ -1,5 +1,4 @@
 #!/bin/sh
-sudo su
 echo 'Adding Debian Repository...'
 sudo apt install debian-keyring
 sudo echo 'deb https://deb.debian.org/debian/ bookworm contrib main non-free

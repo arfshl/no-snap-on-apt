@@ -10,6 +10,6 @@ https://www.debian.org/distrib/packages)
 ### Script (for setup and removal)
 [24.04 LTS Noble](https://github.com/arfshl/no-snap-on-apt/tree/main/Noble)
 
-[22.04 LTS Jammy](https://github.com/arfshl/no-snap-on-apt/tree/main/Noble)
+[22.04 LTS Jammy](https://github.com/arfshl/no-snap-on-apt/tree/main/Jammy)
 
 [20.04 LTS Focal](https://github.com/arfshl/no-snap-on-apt/tree/main/Focal)

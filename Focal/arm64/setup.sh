@@ -1,18 +1,10 @@
 #!/bin/sh
-sudo su
 echo 'Adding Debian Repository...'
 sudo apt install debian-keyring
 sudo echo 'deb https://deb.debian.org/debian/ buster contrib main non-free
 deb https://security.debian.org/debian-security/ buster/updates contrib main non-free' >> /etc/apt/sources.list.d/debian.list
-echo 'Adding Mozilla Repository...'
-wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-sudo echo 'deb [arch=arm64 signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' >> /etc/apt/sources.list.d/mozilla.list
 echo 'Configuring APT Pinning...'
 sudo echo 'Package: *
-Pin: origin packages.mozilla.org
-Pin-Priority: 1001
-
-Package: *
 Pin: origin deb.debian.org
 Pin-Priority: 1
 
@@ -31,10 +23,6 @@ Pin-Priority: 1000
 Package: chromium-sandbox
 Pin: origin deb.debian.org
 Pin-Priority: 1000
-
-Package: firefox
-Pin: release o=Ubuntu
-Pin-Priority: -1
 
 Package: chromium-browser
 Pin: release o=Ubuntu

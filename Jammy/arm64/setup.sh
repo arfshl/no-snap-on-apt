@@ -19,10 +19,6 @@ Package: *
 Pin: origin security.debian.org
 Pin-Priority: 1
 
-Package: firefox-esr
-Pin: origin deb.debian.org
-Pin-Priority: 1000
-
 Package: chromium
 Pin: origin deb.debian.org
 Pin-Priority: 1000

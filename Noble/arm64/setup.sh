@@ -6,6 +6,8 @@ deb https://security.debian.org/debian-security/ bookworm-security contrib main 
 echo 'Adding Mozilla Repository...'
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
 sudo echo 'deb [arch=arm64 signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' >> /etc/apt/sources.list.d/mozilla.list
+echo 'Adding Mozillateam PPA...'
+sudo add-apt-repository ppa:mozillateam/ppa -y
 echo 'Configuring APT Pinning...'
 sudo echo 'Package: *
 Pin: origin packages.mozilla.org
@@ -19,8 +21,8 @@ Package: *
 Pin: origin security.debian.org
 Pin-Priority: 1
 
-Package: firefox-esr
-Pin: origin security.debian.org
+Package: *
+Pin: release o=LP-PPA-mozillateam
 Pin-Priority: 1000
 
 Package: chromium
@@ -35,10 +37,6 @@ Package: chromium-sandbox
 Pin: origin security.debian.org
 Pin-Priority: 1000
 
-Package: thunderbird
-Pin: origin security.debian.org
-Pin-Priority: 1000
-
 Package: firefox
 Pin: release o=Ubuntu
 Pin-Priority: -1
@@ -50,5 +48,4 @@ Pin-Priority: -1
 Package: chromium-browser
 Pin: release o=Ubuntu
 Pin-Priority: -1' >> /etc/apt/preferences.d/nativeapt
-sudo apt update
 echo 'Done'

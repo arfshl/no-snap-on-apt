@@ -1,6 +1,6 @@
 #!/bin/sh
 echo 'Adding Debian Repository...'
-sudo apt install debian-keyring
+sudo apt install debian-keyring debian-archive-keyring
 sudo echo 'deb [signed-by=/usr/share/keyrings/debian-archive-bookworm-automatic.gpg] https://deb.debian.org/debian/ bookworm contrib main non-free non-free-firmware
 deb [signed-by=/usr/share/keyrings/debian-archive-bookworm-security-automatic.gpg] https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware' >> /etc/apt/sources.list.d/debian.list
 echo 'Adding Mozilla Repository...'

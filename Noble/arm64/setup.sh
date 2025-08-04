@@ -1,8 +1,10 @@
 #!/bin/sh
 echo 'Adding Debian Repository...'
-sudo apt install debian-keyring debian-archive-keyring
-sudo echo 'deb [arch=arm64 signed-by=/usr/share/keyrings/debian-archive-bookworm-automatic.asc] https://deb.debian.org/debian/ bookworm contrib main non-free non-free-firmware
-deb [arch=arm64 signed-by=/usr/share/keyrings/debian-archive-bookworm-security-automatic.asc] https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware' >> /etc/apt/sources.list.d/debian.list
+sudo wget -q http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u2_all.deb
+sudo apt install debian-archive-keyring_2023.3+deb12u2_all.deb
+sudo rm debian-archive-keyring_2023.3+deb12u2_all.deb
+sudo echo 'deb https://deb.debian.org/debian/ bookworm contrib main non-free non-free-firmware
+deb https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware' >> /etc/apt/sources.list.d/debian.list
 echo 'Adding Mozilla Repository...'
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
 sudo echo 'deb [arch=arm64 signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' >> /etc/apt/sources.list.d/mozilla.list

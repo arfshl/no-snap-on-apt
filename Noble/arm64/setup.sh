@@ -7,7 +7,7 @@ sudo echo 'deb https://deb.debian.org/debian/ bookworm contrib main non-free non
 deb https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware' >> /etc/apt/sources.list.d/debian.list
 echo 'Adding Mozilla Repository...'
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-sudo echo 'deb [arch=arm64 signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' >> /etc/apt/sources.list.d/mozilla.list
+sudo echo 'deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main' >> /etc/apt/sources.list.d/mozilla.list
 echo 'Adding Mozillateam PPA...'
 sudo add-apt-repository ppa:mozillateam/ppa -y
 echo 'Configuring APT Pinning...'

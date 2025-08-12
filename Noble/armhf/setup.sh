@@ -3,8 +3,8 @@ echo 'Adding Debian Repository...'
 sudo wget -q http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u2_all.deb
 sudo dpkg -i debian-archive-keyring_2023.3+deb12u2_all.deb
 sudo rm debian-archive-keyring_2023.3+deb12u2_all.deb
-sudo echo 'deb https://deb.debian.org/debian/ bookworm contrib main non-free non-free-firmware
-deb https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware' >> /etc/apt/sources.list.d/debian.list
+sudo echo 'deb https://deb.debian.org/debian/ bullseye contrib main non-free
+deb https://security.debian.org/debian-security/ bullseye-security contrib main non-free' >> /etc/apt/sources.list.d/debian.list
 echo 'Adding Mozillateam PPA...'
 sudo add-apt-repository ppa:mozillateam/ppa -y
 echo 'Configuring APT Pinning...'

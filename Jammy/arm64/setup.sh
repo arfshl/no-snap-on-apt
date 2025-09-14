@@ -1,9 +1,10 @@
 #!/bin/sh
 echo 'Adding Debian Repository...'
-sudo wget -q http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u2_all.deb
+wget -q http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u2_all.deb
 sudo dpkg -i debian-archive-keyring_2023.3+deb12u2_all.deb
-sudo rm debian-archive-keyring_2023.3+deb12u2_all.deb
-sudo echo 'deb https://deb.debian.org/debian/ bullseye contrib main non-free
+rm debian-archive-keyring_2023.3+deb12u2_all.deb
+sudo cat <<EOF > /etc/apt/preferences.d/nativeapt
+deb https://deb.debian.org/debian/ bullseye contrib main non-free
 deb https://security.debian.org/debian-security/ bullseye-security contrib main non-free' >> /etc/apt/sources.list.d/debian.list
 echo 'Adding Mozilla Repository...'
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
@@ -45,6 +46,8 @@ Pin-Priority: -1
 
 Package: chromium-browser
 Pin: release o=Ubuntu
-Pin-Priority: -1' >> /etc/apt/preferences.d/nativeapt
+Pin-Priority: -1
+EOF
+
 sudo apt update
 echo 'Done'

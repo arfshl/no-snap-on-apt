@@ -3,7 +3,6 @@ echo 'Adding Debian Repository...'
 wget -q http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u2_all.deb
 sudo dpkg -i debian-archive-keyring_2023.3+deb12u2_all.deb
 rm debian-archive-keyring_2023.3+deb12u2_all.deb
-sudo cat <<EOF > /etc/apt/preferences.d/nativeapt
 deb https://deb.debian.org/debian/ bookworm contrib main non-free non-free-firmware
 deb https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware' >> /etc/apt/sources.list.d/debian.list
 echo 'Adding Mozilla Repository...'
@@ -12,7 +11,8 @@ sudo echo 'deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://pa
 echo 'Adding Mozillateam PPA...'
 sudo add-apt-repository ppa:mozillateam/ppa -y
 echo 'Configuring APT Pinning...'
-sudo echo 'Package: *
+sudo cat <<EOF > /etc/apt/preferences.d/nativeapt
+Package: *
 Pin: origin packages.mozilla.org
 Pin-Priority: 1001
 

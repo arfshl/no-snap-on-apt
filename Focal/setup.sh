@@ -6,7 +6,7 @@ rm debian-archive-keyring_2023.3+deb12u2_all.deb
 deb https://archive.debian.org/debian/ buster contrib main non-free
 deb https://archive.debian.org/debian-security/ buster/updates contrib main non-free' >> /etc/apt/sources.list.d/debian.list
 echo 'Configuring APT Pinning...'
-sudo cat <<EOF > /etc/apt/preferences.d/nativeapt
+sudo tee /etc/apt/preferences.d/nativeapt > /dev/null <<EOF
 Package: *
 Pin: origin archive.debian.org
 Pin-Priority: 1

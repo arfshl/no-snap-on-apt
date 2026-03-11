@@ -7,7 +7,7 @@ Redirect snap transitional package to real native package on ubuntu
 - Firefox and Thunderbird from [Ubuntu Mozilla Team PPA](https://launchpad.net/~mozillateam/+archive/ubuntu/ppa)
 - Chromium from [Debian Repository](https://packages.debian.org/chromium)
 ### Script for setup and removal
-[26.04 LTS Noble](https://github.com/arfshl/no-snap-on-apt/tree/main/resolute)
+[26.04 LTS Resolute](https://github.com/arfshl/no-snap-on-apt/tree/main/resolute)
 
 [24.04 LTS Noble](https://github.com/arfshl/no-snap-on-apt/tree/main/Noble)
 

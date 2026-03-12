@@ -14,3 +14,13 @@ Redirect snap transitional package to real native package on ubuntu
 [22.04 LTS Jammy](https://github.com/arfshl/no-snap-on-apt/tree/main/Jammy)
 
 [20.04 LTS Focal](https://github.com/arfshl/no-snap-on-apt/tree/main/Focal)
+
+## Fully block snapd installation from apt
+
+```
+sudo cat <<EOF > /etc/apt/preferences.d/nosnap
+Package: snapd
+Pin: release o=Ubuntu
+Pin-Priority: -1
+EOF
+```

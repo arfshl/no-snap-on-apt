@@ -15,12 +15,9 @@ Redirect snap transitional package to real native package on ubuntu
 
 [20.04 LTS Focal](https://github.com/arfshl/no-snap-on-apt/tree/main/Focal)
 
-## Fully block snapd installation from apt
+# Fully block snapd installation from apt
 
-```
-sudo cat <<EOF > /etc/apt/preferences.d/nosnap
-Package: snapd
-Pin: release o=Ubuntu
-Pin-Priority: -1
-EOF
-```
+### Setup
+    wget https://github.com/arfshl/no-snap-on-apt/raw/main/nosnap.sh && sudo sh nosnap.sh && rm nosnap.sh
+### Removal
+    wget https://github.com/arfshl/no-snap-on-apt/raw/main/remove-nosnap.sh && sudo sh remove-nosnap.sh && rm remove-nosnap.sh
